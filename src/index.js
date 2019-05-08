@@ -52,13 +52,13 @@ mongoose.connect('mongodb://localhost:27017/mean', options,
             throw err;
         } else {
             console.log('Conectada con la bbdd...');
-            var user = new userController();
-            user.findUser({username: "Jose"});
+            //var user = new userController();
+            //user.findUser({username: "Jose"});
         }
 	});
 // starting the server
 app.listen(app.get('port'), function(){
 	console.log(`server on port ${app.get('port')}`);
 	console.log('Defined routes:');
-	console.log(`	[GET] http://localhost:'${app.get('port')}/`);
+  console.log(`	[GET] http://localhost:'${app.get('port')}/`);
 });
