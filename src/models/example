@@ -1,0 +1,36 @@
+https://mongoosejs.com/docs/4.x/docs/advanced_schemas.html
+
+
+const schema = new Schema({
+    first: String,
+    lastName: String,
+    permissions: Array
+})
+
+class AccountManagementHelper {
+
+    static get PROFILE_CREATE(){ return "profile_create"; }
+    static get PROFILE_EDIT(){ return "profile_edit"; }
+    static get USER_CREATE(){ return "user_create"; }
+
+}
+
+schema.loadClass(AccountManagementHelper)
+var AccountManagement = db.model("AccountManagement", schema);
+
+
+/*
+ *
+ *
+ *
+ *
+ */
+
+AccountManagement.create({
+    first: "hola",
+    lastName: "mundo",
+    permissions: [
+        AccountManagement.PROFILE_CREATE,
+        AccountManagement.USER_CREATE
+    ]
+})
