@@ -25,19 +25,17 @@ class UserHelper {
 
 }
 
-
-
 // Schema.loadClass(UserHelper)
 // User.collection ='users'
-var User = mongoose.model("User", schema);
-// module.exports = db.model("AccountManagement", schema);
-User.create({username:'Jose',fullname:'Jose F'}).
+//var User = mongoose.model("User", schema);
+module.exports = mongoose.model("User", schema);
+/*User.find({username:'Jose',fullname:'Jose F'}).
 then(doc=>{
-    return "User.findByFullName('Jon Snow');"
-})
+    console.log("Valor buscado: ", doc);
+    return doc.username;
+})*/
 
-
-// var small = new User({ fullname: 'smallsave',username:'samall2' });
+// var small = new User({username:'Jose',fullname:'Jose F'});
 // small.save(function (err) {
 //     if (err) return handleError(err);
 //     // saved!

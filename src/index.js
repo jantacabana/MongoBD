@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
-const user = require("./models/user");
+const userController = require('./controllers/userController');
 
 // importing routes
 
@@ -52,7 +52,8 @@ mongoose.connect('mongodb://localhost:27017/mean', options,
             throw err;
         } else {
             console.log('Conectada con la bbdd...');
-            
+            var user = new userController();
+            user.findUser({username: "Jose"});
         }
 	});
 // starting the server
