@@ -3,14 +3,18 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 const schema = new Schema({
-    // isActive: Boolean,
+    isActive: Boolean,
     username: String,
     fullname: String,
-    // password: String,
-    // email: String,
-    // token: String,
-    // expires: { type: Date, default: Date.now },
-    // timeCreated: { type: Date, default: Date.now }
+    password: String,
+    email: String,
+    token: String,
+    // passwordReset : Object({
+    //     token: String,
+    //     expires: { type: Date, default: Date.now }
+    // }),
+    expires: { type: Date, default: Date.now },
+    timeCreated: { type: Date, default: Date.now }
 },
 {versionKey:false})
 
@@ -25,32 +29,4 @@ class UserHelper {
 
 }
 
-// Schema.loadClass(UserHelper)
-// User.collection ='users'
-//var User = mongoose.model("User", schema);
 module.exports = mongoose.model("User", schema);
-/*User.find({username:'Jose',fullname:'Jose F'}).
-then(doc=>{
-    console.log("Valor buscado: ", doc);
-    return doc.username;
-})*/
-
-// var small = new User({username:'Jose',fullname:'Jose F'});
-// small.save(function (err) {
-//     if (err) return handleError(err);
-//     // saved!
-//     console.log("save")
-//   });
-  
-//   // or
-  
-//   User.create({ fullname: 'smallcreate',username:'samall2' }, function (err, small) {
-//     if (err) return handleError(err);
-//     // saved!
-//     console.log("create")
-//   });
-  
-//   // or, for inserting large batches of documents
-//   User.insertMany([{ size: 'small' }], function(err) {
-  
-//   });

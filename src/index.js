@@ -53,9 +53,26 @@ mongoose.connect('mongodb://localhost:27017/mean', options,
         } else {
             console.log('Conectada con la bbdd...');
             var user = new userController();
-            user.findUser({username: "Jose"});
+            var objUsuario ={
+              isActive: true,
+              username: "Jose205",
+              fullname: "Jose Flores",
+              password: "123",
+              email: "flores@enotriasa.com",
+              token: "asxaser2zxca"
+            }
+
+            user.UserAdd(objUsuario)
+            user.FindUserAll();
+
+           
         }
-	});
+  });
+  
+
+
+
+
 // starting the server
 app.listen(app.get('port'), function(){
 	console.log(`server on port ${app.get('port')}`);
