@@ -15,4 +15,4 @@ class ProfileHelper{
 
 }
 profileSchema.loadClass(ProfileHelper);
-var Profile = db.model('Profile', profileSchema);
+module.exports = db.model('Profile', profileSchema);

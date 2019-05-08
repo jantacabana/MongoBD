@@ -77,5 +77,5 @@ mongoose.connect('mongodb://localhost:27017/mean', options,
 app.listen(app.get('port'), function(){
 	console.log(`server on port ${app.get('port')}`);
 	console.log('Defined routes:');
-	console.log(`	[GET] http://localhost:'${app.get('port')}/`);
+  console.log(`	[GET] http://localhost:'${app.get('port')}/`);
 });
