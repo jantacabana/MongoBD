@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
+const user = require("./models/user");
 
 // importing routes
 
@@ -35,7 +37,7 @@ const options = {
     bufferMaxEntries: 0,
     connectTimeoutMS: 10000, // Give up initial connection after 10 seconds
     socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
-    family: 4 // Use IPv4, skip trying IPv6
+    family: 4 // Use IPv4, skip trying IPv6  
   };
 
 // Connection to BD
@@ -50,7 +52,7 @@ mongoose.connect('mongodb://localhost:27017/mean', options,
             throw err;
         } else {
             console.log('Conectada con la bbdd...');
-
+            
         }
 	});
 // starting the server

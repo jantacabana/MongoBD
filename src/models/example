@@ -34,3 +34,24 @@ AccountManagement.create({
         AccountManagement.USER_CREATE
     ]
 })
+
+
+/// para crear // var small = new User({ fullname: 'smallsave',username:'samall2' });
+// small.save(function (err) {
+//     if (err) return handleError(err);
+//     // saved!
+//     console.log("save")
+//   });
+  
+//   // or
+  
+  User.create({ fullname: 'smallcreate',username:'samall2' }, function (err, small) {
+    if (err) return handleError(err);
+    // saved!
+    console.log("create")
+  });
+  
+  // or, for inserting large batches of documents
+  User.insertMany([{ size: 'small' }], function(err) {
+  
+  });
