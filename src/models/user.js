@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const enterpriseModel = require ('./enterprise');
-// const Joi = require('joi');
+const mongoose = require("mongoose");
+const enterpriseModel = require ("./enterprise");
+// const Joi = require("joi");
 var Schema = mongoose.Schema;
 
 const schema = new Schema({

@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const enterpriseModel = require ('./enterprise');
+const mongoose = require("mongoose");
+const enterpriseModel = require ("./enterprise");
 
 const productDigitalSchema = mongoose.Schema({  
     code : {type:String, required : true},
@@ -20,4 +20,4 @@ const productDigitalSchema = mongoose.Schema({
 },
 {versionKey:false})
 
-module.exports = mongoose.model('ProductDigital', productDigitalSchema);
+module.exports = mongoose.model("ProductDigital", productDigitalSchema);

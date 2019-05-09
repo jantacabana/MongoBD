@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const enterpriseModel = require ('./enterprise');
+const mongoose = require("mongoose");
+const enterpriseModel = require ("./enterprise");
 
 const productPhisicalSchema = mongoose.Schema({  
     code : {type:String, required : true},
@@ -18,4 +18,4 @@ const productPhisicalSchema = mongoose.Schema({
 },
 {versionKey:false})
 
-module.exports = mongoose.model('ProductPhisical', productPhisicalSchema);
+module.exports = mongoose.model("ProductPhisical", productPhisicalSchema);

@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-// const profile = require('./profile');
-const user = require('./user');
+const mongoose = require("mongoose");
+// const profile = require("./profile");
+const user = require("./user");
 
 var schema = mongoose.Schema;
 
@@ -27,4 +27,4 @@ const enterpriseSchema = new schema({
 },
 {versionkey:false})
 
-module.exports = mongoose.model('Enterprise', enterpriseSchema);
+module.exports = mongoose.model("Enterprise", enterpriseSchema);
