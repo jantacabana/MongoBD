@@ -3,7 +3,10 @@ const enterpriseModel = require ('./enterprise');
 
 const profileSchema = mongoose.Schema({
     name: String,
-    enterprise : {_id:mongoose.ObjectId,businessName:String,code: {type:String, required : true}}
+    description: String,
+    enterprise : {_id: mongoose.ObjectId, businessName:String, code: {type: String, required: true}, ruc: String},
+    permissions : [String],
+    status: [String]
 },{versionKey:false})
 
 module.exports = mongoose.model('Profile', profileSchema);

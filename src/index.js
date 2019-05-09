@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
-const pruebaJose = require("./example/pruebaJose");
+//const pruebaJose = require("./example/pruebaJose");
 const pruebaJhonatan = require("./example/pruebaJhonatan");
 
 // importing routes

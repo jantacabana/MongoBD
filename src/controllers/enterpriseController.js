@@ -9,36 +9,21 @@ class EnterpriseController{
         then(doc=>{
             console.log("Valor buscado: ", doc);
             return doc.username;
-        })
+        })  
+    }
+
+    createEnterprise(enterprise) {
         
-    }
-
-    saveEnterprise(enterpriseParam){
-        enterpriseParam.status = permissions.status.ENABLED;
-        var enterprise = new enterpriseModel(enterpriseParam);
-
-        // create a comment
-        // enterprise.children.push({ name: 'Liesl' });
-        // var subdoc = parent.children[0];
-        // console.log(subdoc) // { _id: '501d86090d371bab2c0341c5', name: 'Liesl' }
-        // subdoc.isNew; // true
-
-        enterprise.save(function (err) {
-            if (err) {
-                console.log(err);
-            //    return handleError(err)
-            }
-
-            console.log('Success!');
-          });
-    }
-
-    findEnterprise(param){
-        enterpriseModel.find(param).
+        //profile._id = ObjectId("5cd44dd411cfee06ac03d540");
+        enterpriseModel.create(enterprise).
         then(doc=>{
-            console.log("Empresa buscado: ", doc);
+            console.log("empresa creada: ", doc);
             return doc;
-        })        
+        })
+    }
+
+     findEnterprise(param){
+       return enterpriseModel.findOne(param);              
     }
 }
 
