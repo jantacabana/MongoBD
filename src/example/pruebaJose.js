@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+const Async = require('async');
 const permissions = require('../models/permissions');
 const userController = require('../controllers/userController');
 const productPhisical = require('../controllers/productPhisical');
@@ -19,6 +21,7 @@ const ProfileController = require('../controllers/profileController');
     createdBy: "root"
   }
 var objProdDig = {
+    _id : "cd4669c3d746811f0f53f6d",
     code :  "VCB",
     status : "String",
     enterprise : objEnter,
@@ -78,5 +81,46 @@ var prodDigital = new productDigital();
 var enterprisec= new EnterpriseController();
 // enterprisec.saveEnterprise(objEnter)
 
+var update={
+     $set: { code: "mundo"},
+    //$push: { productsDigital: {_id: objProdDig._id,code:objProdDig.code}}
+}
+
+
+
+
+
+async function f(){
+    var resultado1= await  enterprisec._findEnterprise({},{})
+    var filter={
+        _id:resultado1[0]._id
+        // _id: '5cd4623463b9451308c1c427'
+    }    
+    enterprisec.updateEnterprise(filter,update);
+    
+    
+    // var resultado2= await  enterprisec._findEnterprise({},{})
+
+    
+
+}
+
+f();
+
+
+// var res,res2
+// // 
+// var res=  enterprisec.buscar((err, result) => {
+// console.log(">>>>")
+// res=result
+// console.log(">>>>",result)
+// });
+// res2=await res
+
+
+
+
+
+
 var ProfileContr = new ProfileController();
-ProfileContr.saveProfile(objProfile);
+// ProfileCkontr.saveProfile(objProfile);

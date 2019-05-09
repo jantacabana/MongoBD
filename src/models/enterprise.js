@@ -19,10 +19,11 @@ const enterpriseSchema = new schema({
     pathLogo: String,
     pathLogo2: String,
     fileLogoName: String,
-    permissions: Array
+    permissions: Array,
     //profiles: [profile],
     // users: [user]
-    //products: [producto]
+    productsDigital: [{_id:mongoose.ObjectId, productName:String, code: {type:String, required : true}}],
+    productsPhisical:[{_id:mongoose.ObjectId, productName:String, code: {type:String, required : true}}],
 },
 {versionkey:false})
 
