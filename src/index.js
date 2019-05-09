@@ -5,7 +5,9 @@ const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
 const userController = require('./controllers/userController');
-
+const productPhisical = require('./controllers/productPhisical');
+const productDigital = require('./controllers/productDigital');
+const permissions = require('./models/permissions');
 // importing routes
 
 // setting
@@ -52,20 +54,17 @@ mongoose.connect('mongodb://localhost:27017/mean', options,
             throw err;
         } else {
             console.log('Conectada con la bbdd...');
-            var user = new userController();
-            var objUsuario ={
-              isActive: true,
-              username: "Jose205",
-              fullname: "Jose Flores",
-              password: "123",
-              email: "flores@enotriasa.com",
-              token: "asxaser2zxca"
-            }
+            var userc = new userController();
+            // userc.UserAdd()
+            // userc.FindUserAll();
+            var prodPhisical = new productPhisical();
+            // prodPhisical.ProductPhisicalAdd();
+            // prodPhisical.FindProductPhisicalAll();
+            var prodDigital = new productDigital();
+            prodDigital.ProductDigitalAdd();
+            prodDigital.FindProductDigitalAll();
+            
 
-            user.UserAdd(objUsuario)
-            user.FindUserAll();
-
-           
         }
   });
   
