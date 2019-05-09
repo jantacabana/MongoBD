@@ -4,12 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
-const userController = require('./controllers/userController');
-const productPhisical = require('./controllers/productPhisical');
-const productDigital = require('./controllers/productDigital');
-const permissions = require('./models/permissions');
-const EnterpriseController = require('./controllers/enterpriseController');
-const ProfileController = require('./controllers/profileController');
+const pruebaJose = require("./example/pruebaJose");
+const pruebaJhonatan = require("./example/pruebaJhonatan");
 
 // importing routes
 
@@ -57,40 +53,10 @@ mongoose.connect('mongodb://localhost:27017/mean', options,
             throw err;
         } else {
             console.log('Conectada con la bbdd...');
-            var userc = new userController();
-            // userc.UserAdd()
-            // userc.FindUserAll();
-            var prodPhisical = new productPhisical();
-            // prodPhisical.ProductPhisicalAdd();
-            // prodPhisical.FindProductPhisicalAll();
-            var prodDigital = new productDigital();
-            prodDigital.ProductDigitalAdd();
-            prodDigital.FindProductDigitalAll();
-            
-           
-
         }
   });
   
-  var controller = new EnterpriseController();
 
-  var objParam =
-  {
-    code : "00120",
-    bucket : "webservices.enotriasimple.ripley",
-    businessName: "BCP OUTSOURCING",
-    commercialName: "Banco de Crédito del Perú S.A.",
-    abbreviation: "BCP",
-    ruc : "1234567",
-    createdAt: Date.now(),
-    createdBy: "root"
-  }
-var profileController = new ProfileController();
-var objProfile = {
-  name: "callcenter",
-  enterprise : objParam
-}
-profileController.saveProfile(objProfile);
 // starting the server
 app.listen(app.get('port'), function(){
 	console.log(`server on port ${app.get('port')}`);
