@@ -3,11 +3,13 @@ const profileModel = require('../models/profile');
 
 class ProfileController{
     //var userModel = new user
-    AddProfile(profile) {
-        profileModel.find({username: profile.username}).
+    saveProfile(profile) {
+        
+        //profile._id = ObjectId("5cd44dd411cfee06ac03d540");
+        profileModel.create(profile).
         then(doc=>{
             console.log("Valor buscado: ", doc);
-            return doc.username;
+            return doc;
         })
         
     }

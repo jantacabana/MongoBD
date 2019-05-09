@@ -1,30 +1,26 @@
 const mongoose = require('mongoose');
+const profile = require('./profile');
+const user = require('./user');
 
 const enterpriseSchema = mongoose.Schema({
     code: {type:String, required : true},
     businessName: String,
+    bucket: String,
     commercialName: String,
     abbreviation: String,
     ruc : Number,
     status: String,
-    registrationDate: Date,
-    modificationDate: Date,
-    registrationUser: String,
-    modificationUser: String,
+    createdAt: Date,
+    modifiedAt: Date,
+    createdBy: String,
+    modifiedBy: String,
     pathLogo: String,
     pathLogo2: String,
     fileLogoName: String,
-    Permissions: Array
+    permissions: Array
+    //profiles: [profile],
+   // users: [user]
+    //products: [producto]
 })
 
-
-class EnterpriseHelper{
-
-    static get ENTERPRISE_ACCESS(){return "enterprise-access"};
-    static get ENTERPRISE_CREATE(){return "enterprise-create"};
-    static get ENTERPRISE_EDIT_LOGO(){return "enterprise-edit-logo"};
-       
-    
-}
-enterpriseSchema.loadClass(EnterpriseHelper);
-var Enterprise = db.model('Enterprise', enterpriseSchema);
+module.exports = mongoose.model('Enterprise', enterpriseSchema);
