@@ -2,10 +2,7 @@ const EnterpriseController = require('../controllers/enterpriseController');
 const ProfileController = require('../controllers/profileController');
 const permissions = require('../models/permissions');
 
-
 var controller = new EnterpriseController();
-<<<<<<< HEAD
-var objEnterprise ={}
 controller.findEnterprise({_id : "5cd4885a498f342bbc4e4a72"}).then(function(res){ 
   var profileController = new ProfileController();
   var objProfile = {
@@ -18,9 +15,6 @@ controller.findEnterprise({_id : "5cd4885a498f342bbc4e4a72"}).then(function(res)
 });
 //console.log("empresa encontrado", objEnterprise);
 //console.log("3")
-=======
-// controller.findEnterprise({_id : "5cd455bbb7b76c082c4bc321"});
->>>>>>> 44899c0f2cd939ba85bc05664d017cf1211654ce
 /*
 var objParam =
 {

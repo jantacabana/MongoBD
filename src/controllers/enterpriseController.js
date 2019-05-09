@@ -10,9 +10,6 @@ class EnterpriseController{
         then(doc=>{
             console.log("Valor buscado: ", doc);
             return doc.username;
-<<<<<<< HEAD
-        })  
-=======
         })
         
     }
@@ -26,7 +23,6 @@ class EnterpriseController{
             }
             console.log('Success!');
           });
->>>>>>> 44899c0f2cd939ba85bc05664d017cf1211654ce
     }
     updateEnterprise(filter,update){
         enterpriseModel.update(filter,update,
@@ -36,20 +32,6 @@ class EnterpriseController{
           });
     }
 
-<<<<<<< HEAD
-    createEnterprise(enterprise) {
-        
-        //profile._id = ObjectId("5cd44dd411cfee06ac03d540");
-        enterpriseModel.create(enterprise).
-        then(doc=>{
-            console.log("empresa creada: ", doc);
-            return doc;
-        })
-    }
-
-     findEnterprise(param){
-       return enterpriseModel.findOne(param);              
-=======
     findEnterprise(param,callback){
         console.log(">>>",arguments)
          return enterpriseModel.find(param)
@@ -74,7 +56,6 @@ class EnterpriseController{
     async buscar(callback){
         var doc =await this._findEnterprise({},{});
         return  callback(null, doc); 
->>>>>>> 44899c0f2cd939ba85bc05664d017cf1211654ce
     }
 }
 
