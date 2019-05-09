@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const profile = require('./profile');
+// const profile = require('./profile');
 const user = require('./user');
 
 const enterpriseSchema = mongoose.Schema({
@@ -19,8 +19,9 @@ const enterpriseSchema = mongoose.Schema({
     fileLogoName: String,
     permissions: Array
     //profiles: [profile],
-   // users: [user]
+    // users: [user]
     //products: [producto]
-})
+},
+{versionkey:false})
 
 module.exports = mongoose.model('Enterprise', enterpriseSchema);

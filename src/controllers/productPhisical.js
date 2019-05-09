@@ -11,20 +11,8 @@ class ProductPhisicalController{
         })        
     }
 
-    ProductPhisicalAdd(){
-        var obj = {
-            code :  "CO2",
-            status : "String",
-            enterpriseId : "590a53f8fd21e523309f4448",
-            denomination :"BCP",
-            description : "BCP FISICO",
-            productName : "BCP FISICO",
-            sentMailStatus : "k",
-            registrationUser : "root",
-            modificationUser : "root",            
-            numericCode : 2,
-            isDeleted : false
-        }
+    ProductPhisicalAdd(obj){
+       
         productPhisical.create(obj).
         then(doc=>{
             console.log("Valor creado: ", doc);

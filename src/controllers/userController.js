@@ -13,17 +13,7 @@ class UserController{
         })        
     }
 
-    UserAdd(){
-        var objUsuario ={
-            isActive: true,
-            username: "Jose2323",
-            fullname: "Jose Flores",
-            password: "123",
-            email: "flores@enotriasa.com",
-            token: "asxaser2zxca",              
-            permissions:[permissions.actions.ENTERPRISE_CREATE,permissions.actions.ENTERPRISE_EDIT_LOGO],
-            status:permissions.status.ENABLED
-          }
+    UserAdd(objUsuario){        
         user.create(objUsuario).
         then(doc=>{
             console.log("Valor creado: ", doc);
