@@ -1,18 +1,12 @@
 const mongoose = require('mongoose');
+const enterpriseModel = require('./enterprise');
 
 const profileSchema = mongoose.Schema({
-    enterpriseId: String,
     name: {type : String, required : true},
-    products: Array,
-    modules: Array,
-    permissions: Array
+    //products: Array,
+    //modules: Array,
+    //permissions: Array,
+    enterprise: enterpriseModel
 })
 
-class ProfileHelper{
-
-    static get PROFILE_CREATE(){return "profile-create"};
-    static get PROFILE_EDIT(){return "profile-edit"};
-
-}
-profileSchema.loadClass(ProfileHelper);
-module.exports = db.model('Profile', profileSchema);
+module.exports = mongoose.model('Profile', profileSchema);

@@ -8,6 +8,9 @@ const userController = require('./controllers/userController');
 const productPhisical = require('./controllers/productPhisical');
 const productDigital = require('./controllers/productDigital');
 const permissions = require('./models/permissions');
+const EnterpriseController = require('./controllers/enterpriseController');
+const ProfileController = require('./controllers/profileController');
+
 // importing routes
 
 // setting
@@ -64,14 +67,30 @@ mongoose.connect('mongodb://localhost:27017/mean', options,
             prodDigital.ProductDigitalAdd();
             prodDigital.FindProductDigitalAll();
             
+           
 
         }
   });
   
+  var controller = new EnterpriseController();
 
-
-
-
+  var objParam =
+  {
+    code : "00120",
+    bucket : "webservices.enotriasimple.ripley",
+    businessName: "BCP OUTSOURCING",
+    commercialName: "Banco de Crédito del Perú S.A.",
+    abbreviation: "BCP",
+    ruc : "1234567",
+    createdAt: Date.now(),
+    createdBy: "root"
+  }
+var profileController = new ProfileController();
+var objProfile = {
+  name: "callcenter",
+  enterprise : objParam
+}
+profileController.saveProfile(objProfile);
 // starting the server
 app.listen(app.get('port'), function(){
 	console.log(`server on port ${app.get('port')}`);
