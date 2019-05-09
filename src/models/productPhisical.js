@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const enterpriseModel = require ('./enterprise');
 
 const productPhisicalSchema = mongoose.Schema({  
-    code : String,
+    code : {type:String, required : true},
     status : String,
     enterprise : {_id:mongoose.ObjectId,businessName:String,code: {type:String, required : true}},
     denomination : String,

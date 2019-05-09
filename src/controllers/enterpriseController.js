@@ -1,4 +1,5 @@
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const Async = require('async');
 const enterpriseModel = require('../models/enterprise');
 const permissions = require('../models/permissions');
 
@@ -16,30 +17,53 @@ class EnterpriseController{
     saveEnterprise(enterpriseParam){
         enterpriseParam.status = permissions.status.ENABLED;
         var enterprise = new enterpriseModel(enterpriseParam);
-
-        // create a comment
-        // enterprise.children.push({ name: 'Liesl' });
-        // var subdoc = parent.children[0];
-        // console.log(subdoc) // { _id: '501d86090d371bab2c0341c5', name: 'Liesl' }
-        // subdoc.isNew; // true
-
         enterprise.save(function (err) {
             if (err) {
                 console.log(err);
-            //    return handleError(err)
             }
-
             console.log('Success!');
           });
     }
+    updateEnterprise(filter,update){
+        enterpriseModel.update(filter,update,
+         function (err, doc){
+            console.log("err",err);
+            console.log("doc",doc);
+          });
+    }
 
-    findEnterprise(param){
-        enterpriseModel.find(param).
-        then(doc=>{
-            console.log("Empresa buscado: ", doc);
-            return doc;
-        })        
+    findEnterprise(param,callback){
+        console.log(">>>",arguments)
+         return enterpriseModel.find(param)
+         //.
+        // then(doc=>{            
+        //     return callback(null,doc);
+        // })        
+    }
+
+    _findEnterprise(param,fields){
+        return new Promise((resolve,reject)=>{
+            enterpriseModel.find(param,fields,(err,result)=>{
+                if(err){
+                    return reject(err)
+                }
+                // console.log("Empresa buscado: ", result);
+                resolve(result)
+            })
+        })
+    }
+
+    async buscar(callback){
+        var doc =await this._findEnterprise({},{});
+        return  callback(null, doc); 
     }
 }
+
+// async function _FindEnterprise(){
+//     var aux =  await JournalLines._findOne(query,{ _id: 1 })
+//     return aux
+// }
+
+
 
 module.exports = EnterpriseController;
