@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
-const profile = require('./profile');
-const user = require('./user');
+//const profile = require('./profile');
+//const user = require('./user');
 
-const enterpriseSchema = mongoose.Schema({
+var schema = mongoose.Schema;
+
+const enterpriseSchema = new schema({
     code: {type:String, required : true},
     businessName: String,
     bucket: String,
@@ -21,6 +23,6 @@ const enterpriseSchema = mongoose.Schema({
     //profiles: [profile],
    // users: [user]
     //products: [producto]
-})
+}, {versionKey:false})
 
 module.exports = mongoose.model('Enterprise', enterpriseSchema);

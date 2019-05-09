@@ -32,6 +32,14 @@ class EnterpriseController{
             console.log('Success!');
           });
     }
+
+    findEnterprise(param){
+        enterpriseModel.find(param).
+        then(doc=>{
+            console.log("Empresa buscado: ", doc);
+            return doc;
+        })        
+    }
 }
 
 module.exports = EnterpriseController;

@@ -3,7 +3,8 @@ const ProfileController = require('../controllers/profileController');
 
 
 var controller = new EnterpriseController();
-
+controller.findEnterprise({_id : "5cd455bbb7b76c082c4bc321"});
+/*
 var objParam =
 {
   code : "00120",
@@ -22,4 +23,5 @@ name: "callcenter",
 enterprise : objParam
 }
 
-// profileController.saveProfile(objProfile);
+profileController.saveProfile(objProfile);
+*/
