@@ -1,30 +1,30 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+// const profile = require("./profile");
+const user = require("./user");
 
-const enterpriseSchema = mongoose.Schema({
+var schema = mongoose.Schema;
+
+const enterpriseSchema = new schema({
     code: {type:String, required : true},
     businessName: String,
+    bucket: String,
     commercialName: String,
     abbreviation: String,
     ruc : Number,
     status: String,
-    registrationDate: Date,
-    modificationDate: Date,
-    registrationUser: String,
-    modificationUser: String,
+    createdAt: {type : Date, default:Date.now()},
+    modifiedAt: {type : Date},
+    createdBy: String,
+    modifiedBy: String,
     pathLogo: String,
     pathLogo2: String,
     fileLogoName: String,
-    Permissions: Array
-})
+    permissions: Array,
+    profiles: [{_id: mongoose.ObjectId, Name: String}],
+    users: [{_id: mongoose.ObjectId, username: String}],
+    productsDigital: [{_id:mongoose.ObjectId, productName:String, code: String}],
+    productsPhisical:[{_id:mongoose.ObjectId, productName:String, code: String}],
+},
+{versionkey:false})
 
-
-class EnterpriseHelper{
-
-    static get ENTERPRISE_ACCESS(){return "enterprise-access"};
-    static get ENTERPRISE_CREATE(){return "enterprise-create"};
-    static get ENTERPRISE_EDIT_LOGO(){return "enterprise-edit-logo"};
-       
-    
-}
-enterpriseSchema.loadClass(EnterpriseHelper);
-var Enterprise = db.model('Enterprise', enterpriseSchema);
+module.exports = mongoose.model("Enterprise", enterpriseSchema);

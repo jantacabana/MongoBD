@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
-const user = require("./models/user");
+//const pruebaJose = require("./example/pruebaJose");
+const pruebaJhonatan = require("./example/pruebaJhonatan");
 
 // importing routes
 
@@ -52,12 +53,13 @@ mongoose.connect('mongodb://localhost:27017/mean', options,
             throw err;
         } else {
             console.log('Conectada con la bbdd...');
-            
         }
-	});
+  });
+  
+
 // starting the server
 app.listen(app.get('port'), function(){
 	console.log(`server on port ${app.get('port')}`);
 	console.log('Defined routes:');
-	console.log(`	[GET] http://localhost:'${app.get('port')}/`);
+  console.log(`	[GET] http://localhost:'${app.get('port')}/`);
 });
