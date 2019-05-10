@@ -16,15 +16,16 @@ const actions = {
     PRODUCT_PHISICAL_SEARCH : "product_phisical_search",
     PRODUCT_PHISICAL_CREATE : "product_phisical_create",
     PRODUCT_PHISICAL_EDIT : "product_phisical_edit",
-    PRODUCT_PHISICAL_DELETE : "product_phisical_delete",
-}   
+    PRODUCT_PHISICAL_DELETE : "product_phisical_delete"
+};
 
 //status
 const status = {
     ENABLED : "enabled",
     DISABLED : "disabled",
     PASSWORD_CHANGED : "password-changed"
-}
+};
 
-module.exports = ({actions,status});
+module.exports = actions;
+module.exports= status;
 
