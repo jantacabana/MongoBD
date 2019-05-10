@@ -26,5 +26,5 @@ const status = {
     PASSWORD_CHANGED : "password-changed"
 };
 
-module.exports = ({actions,status});
+module.exports = {actions, status};
 

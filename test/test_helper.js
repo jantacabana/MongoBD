@@ -15,12 +15,12 @@
 //     console.log("paso 1")
 
 //     before((done)=>{
-//       mongoose.connect('mongodb://localhost:27017/mean'); 
-//       mongoose.connection
-//           .once('open', () => {console.log('Connected!'); done(); })
-//           .on('error', (error) => {
-//             console.warn('Error : ',error);
-//           });
+//     mongoose.connect('mongodb://localhost:27017/mean'); 
+//     mongoose.connection
+//         .once('open', () => {console.log('Connected!'); done(); })
+//         .on('error', (error) => {
+//         console.warn('Error : ',error);
+//     });
 //     })
 //     beforeEach((done) => {
 //         profile = new Profile(objProfile);
