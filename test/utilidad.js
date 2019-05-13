@@ -9,7 +9,7 @@ const objEnternew =
   ruc : "1234567",
   createdAt: Date.now(),
   createdBy: "root"
-}
+};
 
 const objEnter =
 {
@@ -22,7 +22,7 @@ const objEnter =
   ruc : "1234567",
   createdAt: Date.now(),
   createdBy: "root"
-}
+};
 
 const objUsuario ={
     isActive: true,
@@ -30,20 +30,20 @@ const objUsuario ={
     fullname: "Jose Flores",
     password: "123",
     email: "flores@enotriasa.com",
-    token: "asxaser2zxca",   
-    enterprise : objEnter,           
+    token: "asxaser2zxca",
+    enterprise : objEnter,
     permissions:[permissions.actions.ENTERPRISE_CREATE,permissions.actions.ENTERPRISE_EDIT_LOGO],
     status:permissions.status.ENABLED
-}
+};
 
-const objUsuarioBuscar ={
-    username: "Josefl",
-}
+const objUsuarioBuscar = {
+    username: "Josefl"
+};
 const objUsuarioupdate ={
-    $set:{       
+    $set:{
         email:"flores@enotriasa.com"
     }
-}
+};
 
 const objProdDigCreate = {
     _id : "cd4669c3d746811f0f53f6d",
@@ -55,19 +55,21 @@ const objProdDigCreate = {
     productName : "BCP FISICO",
     sentMailStatus : "k",
     registrationUser : "root",
-    modificationUser : "root",            
+    modificationUser : "root",
     numericCode : 2,
     isDeleted : false
-}
+};
 
 const objProdDigBuscar ={
-    code :  "VCB",
-}
+    code :  "VCB"
+};
+
 const objProdDigupdate ={
-    $set:{       
+    $set:{
         productName : "BCP FISICO"
     }
-}
+};
+
 const objProdDig = {
     code :  "VCB",
     status : "String",
@@ -77,7 +79,7 @@ const objProdDig = {
     productName : "BCP FISICO",
     sentMailStatus : "k",
     registrationUser : "root",
-    modificationUser : "root",            
+    modificationUser : "root",
     numericCode : 2,
     isDeleted : false
 }
